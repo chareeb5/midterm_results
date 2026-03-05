@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Midterm Result Portal</title>
+</head>
+
+<body style="text-align:center;font-family:Arial;margin-top:100px">
+
+<h2>College Midterm Results</h2>
+
+<input id="roll" placeholder="Roll Number"><br><br>
+<input id="pass" type="password" placeholder="Password"><br><br>
+
+<button onclick="check()">View Result</button>
+
+<p id="msg" style="color:red"></p>
+
+<script src="data.js"></script>
+
+<script>
+function check(){
+
+var r=document.getElementById("roll").value;
+var p=document.getElementById("pass").value;
+
+if(students[r] && students[r]==p){
+
+window.location.href=r+".pdf";
+
+}else{
+
+document.getElementById("msg").innerText="Invalid Roll Number or Password";
+
+}
+
+}
+</script>
+
+</body>
+</html>
