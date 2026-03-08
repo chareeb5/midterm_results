@@ -1,27 +1,206 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Midterm Result Portal</title>
+
+<title>ULC Midterm Result Portal</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body{
+margin:0;
+font-family:Segoe UI, Arial;
+background:#8b0000;
+color:white;
+}
+
+/* LEFT SIDE BACKGROUND */
+
+.left-bg{
+position:fixed;
+left:0;
+top:0;
+width:45%;
+height:100%;
+background-image:url("background.jpg");
+background-size:cover;
+background-position:center;
+opacity:0.25;
+}
+
+/* RIGHT CONTENT */
+
+.container{
+margin-left:45%;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+/* LOGO */
+
+.logo{
+position:absolute;
+right:30px;
+top:20px;
+width:90px;
+}
+
+/* TITLE */
+
+.title{
+color:#d4af37;
+font-size:34px;
+font-weight:bold;
+letter-spacing:2px;
+margin-bottom:5px;
+}
+
+.subtitle{
+font-size:20px;
+margin-bottom:40px;
+}
+
+/* LOGIN CARD */
+
+.card{
+background:white;
+padding:40px;
+border-radius:10px;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+color:black;
+width:320px;
+}
+
+/* INPUTS */
+
+input{
+width:100%;
+padding:14px;
+margin-top:10px;
+border-radius:6px;
+border:1px solid #ccc;
+font-size:16px;
+}
+
+/* BUTTON */
+
+button{
+margin-top:20px;
+width:100%;
+padding:14px;
+background:#d4af37;
+border:none;
+border-radius:6px;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* ERROR MESSAGE */
+
+#msg{
+margin-top:10px;
+color:red;
+}
+
+/* FOOTER */
+
+.footer{
+position:fixed;
+bottom:20px;
+text-align:center;
+width:100%;
+font-size:14px;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width:768px){
+
+.left-bg{
+position:relative;
+width:100%;
+height:200px;
+}
+
+.container{
+margin-left:0;
+padding-top:30px;
+}
+
+.logo{
+right:10px;
+top:10px;
+width:70px;
+}
+
+.title{
+font-size:26px;
+}
+
+.subtitle{
+font-size:18px;
+}
+
+}
+
+</style>
+
 </head>
 
-<body style="text-align:center;font-family:Arial;margin-top:100px">
+<body>
 
-<h2>College Midterm Results</h2>
+<div class="left-bg"></div>
 
-<input id="roll" placeholder="Roll Number"><br><br>
-<input id="pass" type="password" placeholder="Password"><br><br>
+<img src="logo.png" class="logo">
 
-<button onclick="check()">View Result</button>
+<div class="container">
 
-<p id="msg" style="color:red"></p>
+<div class="title">UNIFIED LAW COLLEGE CHINIOT</div>
+
+<div class="subtitle">Midterm Examination Result</div>
+
+<div class="card">
+
+<input id="roll" placeholder="Roll Number">
+
+<input id="pass" type="password" placeholder="Password">
+
+<button onclick="check()" id="btn">View Result</button>
+
+<p id="msg"></p>
+
+</div>
+
+</div>
+
+<div class="footer">
+
+<div>www.ulc.edu.pk</div>
+<div>2-KM Lahore Road Chiniot</div>
+
+</div>
 
 <script src="data.js"></script>
 
 <script>
+
 function check(){
 
 var r=document.getElementById("roll").value;
 var p=document.getElementById("pass").value;
+
+var btn=document.getElementById("btn");
+
+btn.innerText="Checking...";
+
+setTimeout(function(){
 
 if(students[r] && students[r]==p){
 
@@ -30,10 +209,14 @@ window.location.href=r+".pdf";
 }else{
 
 document.getElementById("msg").innerText="Invalid Roll Number or Password";
+btn.innerText="View Result";
 
 }
 
+},1000);
+
 }
+
 </script>
 
 </body>
