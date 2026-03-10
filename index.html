@@ -23,10 +23,11 @@ left:0;
 top:0;
 width:45%;
 height:100%;
-background-image:url("background.jpg");
+background:
+linear-gradient(rgba(139,0,0,0.4), rgba(139,0,0,0.4)),
+url("background.jpg");
 background-size:cover;
 background-position:center;
-opacity:0.25;
 }
 
 /* RIGHT CONTENT */
@@ -45,10 +46,10 @@ padding:20px;
 /* LOGO */
 
 .logo{
-position:absolute;
-right:30px;
-top:20px;
-width:90px;
+position:fixed;
+right:30px
+top:30px
+width:30px;
 }
 
 /* TITLE */
@@ -62,8 +63,9 @@ margin-bottom:5px;
 }
 
 .subtitle{
+color:#d4af37;
 font-size:20px;
-margin-bottom:40px;
+margin-bottom:10px;
 }
 
 /* LOGIN CARD */
@@ -141,7 +143,7 @@ width:70px;
 }
 
 .title{
-font-size:26px;
+font-size:28px;
 }
 
 .subtitle{
@@ -158,13 +160,19 @@ font-size:18px;
 
 <div class="left-bg"></div>
 
+class="logo">
+
 <img src="logo.png" class="logo">
 
 <div class="container">
 
 <div class="title">UNIFIED LAW COLLEGE CHINIOT</div>
 
-<div class="subtitle">Midterm Examination Result</div>
+<div class="subtitle">MIDTERM EXAM RESULT</div>
+
+<div class="subtitle">BATCH 2025-2029</div>
+
+<div class="subtitle">SEMESTER 1</div>
 
 <div class="card">
 
